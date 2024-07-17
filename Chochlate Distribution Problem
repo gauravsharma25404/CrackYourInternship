@@ -1,0 +1,17 @@
+long long findMinDiff(vector<long long> a, long long n, long long m){
+        
+        std::sort(a.begin(),a.end());
+        
+        long long start,end,diff;
+        long long min_diff = a[m-1] - a[0] ;
+        
+        for(int i=0; i<n-m+1; i++){
+            start = a[i];
+            end = a[i+m-1];
+            diff = end - start;
+            min_diff = std::min(min_diff,diff);
+        }
+        
+        return min_diff;
+    
+    }   
